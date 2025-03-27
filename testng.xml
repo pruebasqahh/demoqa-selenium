@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Demoqa Suite">
+    <test name="Demoqa Tests">
+        <classes>
+            <class name="tests.DemoqaTest"/>
+            <class name="tests.DemoqaBookStoreTest"/>
+        </classes>
+    </test>
+</suite>
