@@ -4,7 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-
+import utils.ExtentReportManager;
+import com.aventstack.extentreports.ExtentReports;
 import java.time.Duration;
 
 public class BaseTest {
@@ -19,6 +20,10 @@ public class BaseTest {
 
     @AfterMethod
     public void tearDown() {
-        driver.quit();
+        if (driver != null) {
+            driver.quit();
+        }
+        ExtentReports report = ExtentReportManager.getInstance();
+        report.flush(); // Guarda el reporte HTML
     }
 }
